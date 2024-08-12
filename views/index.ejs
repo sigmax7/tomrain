@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body>
+    <h1>Will there be rain tomorrow </h1>
+    <form action="submit" method="post">
+        <label for="loc">Enter city name: </label>
+        <input type="text" name="loc" id="loc">
+        <button type="submit" id="sub">Find</button>
+    </form>
+<div>
+    <% if(locals.content) { %>
+        <ol>
+            <% for(var i=0;i<=23;i++) { %>
+            <li>
+                
+                <ul>
+                    <li>Time : <%= JSON.stringify(content.hour[i].time) %> , Temp : <%= JSON.stringify(content.hour[i].temp_c) %> deg C</li>
+                    <li>Condition : <%= JSON.stringify(content.hour[i].condition.text) %></li><br>
+                </ul>  
+                           
+            </li>
+            <%   } %> 
+        </ol>     
+   
+      
+  <%  } %>
+
+</div>
+</body>
+</html>
